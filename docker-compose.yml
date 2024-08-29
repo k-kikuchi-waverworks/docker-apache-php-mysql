@@ -26,7 +26,6 @@ services:
             - persistent:/var/lib/mysql
         networks:
             - default
-            - default
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         links: 
@@ -37,7 +36,9 @@ services:
             MYSQL_USER: user
             MYSQL_PASSWORD: test
             MYSQL_ROOT_PASSWORD: test 
+        networks:
+            - default
 volumes:
     persistent:
 networks:
-    frontend:   
+    default:
